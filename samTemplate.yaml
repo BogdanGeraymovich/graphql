@@ -6,6 +6,7 @@ Resources:
     Properties:
       Handler: graphql.graphqlHandler
       Runtime: nodejs6.10
+      CodeUri: ./
       Events:
         GetRequest:
           Type: Api
@@ -22,6 +23,7 @@ Resources:
     Properties:
       Handler: graphql.graphiqlHandler
       Runtime: nodejs6.10
+      CodeUri: ./
       Events:
         GetRequest:
           Type: Api
