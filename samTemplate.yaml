@@ -4,7 +4,7 @@ Resources:
   GraphQL:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: graphql.graphqlHandler
+      Handler: handler.graphqlHandler
       Runtime: nodejs6.10
       CodeUri: ./
       Events:
@@ -21,7 +21,7 @@ Resources:
   GraphQLInspector:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: graphql.graphiqlHandler
+      Handler: handler.graphiqlHandler
       Runtime: nodejs6.10
       CodeUri: ./
       Events:
