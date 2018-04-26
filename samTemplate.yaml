@@ -23,7 +23,7 @@ Resources:
     Properties:
       Handler: handler.graphiqlHandler
       Runtime: nodejs6.10
-      CodeUri: ./
+      CodeUri: {PWD}
       Events:
         GetRequest:
           Type: Api
