@@ -6,7 +6,7 @@ Resources:
     Properties:
       Handler: handler.graphqlHandler
       Runtime: nodejs6.10
-      CodeUri: {PWD}
+      CodeUri: /codebuild/output/src785896905/src
       Events:
         GetRequest:
           Type: Api
@@ -23,7 +23,7 @@ Resources:
     Properties:
       Handler: handler.graphiqlHandler
       Runtime: nodejs6.10
-      CodeUri: {PWD}
+      CodeUri: /codebuild/output/src785896905/src
       Events:
         GetRequest:
           Type: Api
