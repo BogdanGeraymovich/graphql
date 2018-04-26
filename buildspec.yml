@@ -4,8 +4,11 @@ phases:
     commands:
       - npm install
       - ls -a
+      - cat samTemplate.yaml
       - aws cloudformation package --template-file samTemplate.yaml --s3-bucket graphql-api-1
                                    --output-template-file outputSamTemplate.yaml
+      - ls -a
+      - cat outputSamTemplate.yaml
 artifacts:
   type: zip
   files:
