@@ -1,15 +1,18 @@
 version: 0.1
 phases:
-  install:
+  pre_build:
     commands:
-      - npm install
-      - ls -a
+      - cd src && npm install
+
+  build:
+    commands:
       - cat samTemplate.yaml
       - aws cloudformation package --template-file samTemplate.yaml --s3-bucket graphql-api-1
                                    --output-template-file outputSamTemplate.yaml
       - ls -a
       - cat outputSamTemplate.yaml
 artifacts:
+  discard-paths: yes
   type: zip
   files:
     - samTemplate.yaml
