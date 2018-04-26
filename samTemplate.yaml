@@ -1,12 +1,12 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Transform: 'AWS::Serverless-2016-10-31'
+Transform: AWS::Serverless-2016-10-31
 Resources:
   GraphQL:
     Type: AWS::Serverless::Function
     Properties:
       Handler: handler.graphqlHandler
       Runtime: nodejs6.10
-      CodeUri: ./
+      CodeUri: .
       Events:
         GetRequest:
           Type: Api
