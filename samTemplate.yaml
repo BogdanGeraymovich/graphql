@@ -5,8 +5,8 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: handler.graphqlHandler
-      Runtime: nodejs6.10
-      CodeUri: /codebuild/output/src785896905/src
+      Runtime: nodejs8.10
+      CodeUri: src/
       Events:
         GetRequest:
           Type: Api
@@ -22,8 +22,8 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: handler.graphiqlHandler
-      Runtime: nodejs6.10
-      CodeUri: /codebuild/output/src785896905/src
+      Runtime: nodejs8.10
+      CodeUri: src/
       Events:
         GetRequest:
           Type: Api
