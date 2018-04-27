@@ -1,17 +1,23 @@
 version: 0.1
+
 phases:
+  install:
+    commands:
+      - echo "nothing to do in install"
   pre_build:
     commands:
+      - echo "Installing dependencies - `pwd`"
       - cd app && npm install
-
+      - echo "dependencies install completed `date`"
   build:
     commands:
-      - cat samTemplate.yaml
-      - aws cloudformation package --template-file samTemplate.yaml --s3-bucket graphql-api-1
-                                   --output-template-file outputSamTemplate.yaml
-      - ls -a
-      - cat outputSamTemplate.yaml
+      - echo "Starting build `date` in `pwd`"
+      - aws cloudformation package --template-file samTemplate.yaml --s3-bucket graphql-api-1 --output-template-file outputSamTemplate.yaml
+  post_build:
+    commands:
+      - echo "build completed on `date`"
+
 artifacts:
-  discard-paths: yes
   files:
     - outputSamTemplate.yaml
+  discard-paths: yes
