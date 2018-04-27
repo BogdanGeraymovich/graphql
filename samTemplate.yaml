@@ -1,5 +1,15 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
+
+Parameters:
+  Stage:
+    Type: String
+    AllowedValues:
+      - beta
+      - gamma
+      - prod
+    Default: beta
+    Description: Stage that can be added to resource names
 Resources:
   GraphQL:
     Type: AWS::Serverless::Function
@@ -7,6 +17,7 @@ Resources:
       Handler: handler.graphqlHandler
       Runtime: nodejs8.10
       CodeUri: app/
+      Policies: AWSLambdaBasicExecutionRole
       Events:
         GetRequest:
           Type: Api
