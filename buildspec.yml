@@ -3,16 +3,16 @@ version: 0.1
 phases:
   install:
     commands:
-      - echo "nothing to do in install"
+      - npm i -g serverless
   pre_build:
     commands:
       - echo "Installing dependencies - `pwd`"
-      - cd app && npm install
+      - npm install
       - echo "dependencies install completed `date`"
   build:
     commands:
       - echo "Starting build `date` in `pwd`"
-      - aws cloudformation package --template-file samTemplate.yaml --s3-bucket graphql-api-1 --output-template-file outputSamTemplate.yaml
+      - serverless deploy
   post_build:
     commands:
       - echo "build completed on `date`"
