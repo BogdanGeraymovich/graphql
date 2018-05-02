@@ -16,8 +16,3 @@ phases:
   post_build:
     commands:
       - echo "build completed on `date`"
-
-artifacts:
-  files:
-    - outputSamTemplate.yaml
-  discard-paths: yes
